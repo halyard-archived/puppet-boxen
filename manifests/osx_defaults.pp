@@ -36,11 +36,12 @@ define boxen::osx_defaults(
         $checkvalue = $value
       }
 
-      $write_cmd = $type_ ? {
-        undef   => shellquote($default_cmds, 'write', $domain, $key, strip("${value} ")),
-        'dict'  => "#{shellquote($default_cmds, 'write', $domain, $key, '-dict')} ${value}",
-        default => shellquote($default_cmds, 'write', $domain, $key, "-${type_}", strip("${value} "))
+      $value_string = $type_ ? {
+        undef   => shellquote(strip("${value} ")),
+        'dict'  => "-dict $value",
+        default => shellquote("-${type_}", strip("${value} "))
       }
+      $write_cmd = shellquote($default_cmds, 'write', $domain, $key) + $value_string
 
       $read_cmd = shellquote($default_cmds, 'read', $domain, $key)
 
