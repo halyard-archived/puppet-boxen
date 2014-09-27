@@ -41,7 +41,7 @@ define boxen::osx_defaults(
         'dict'  => "-dict $value",
         default => shellquote("-${type_}", strip("${value} "))
       }
-      $write_cmd = shellquote($default_cmds, 'write', $domain, $key) + $value_string
+      $write_cmd = shellquote($default_cmds, 'write', $domain, $key) "$value_string"
 
       $read_cmd = shellquote($default_cmds, 'read', $domain, $key)
 
