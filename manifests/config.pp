@@ -40,6 +40,7 @@ class boxen::config (
     $download_url_base,
   )
 
+  notify { "${home}, ${srcdir}, ${bindir}, ${cachedir}, ${configdir}, ${datadir}, ${envdir}, ${logdir}, ${socketdir}": } ->
   file { [$home,
           $srcdir,
           $bindir,
