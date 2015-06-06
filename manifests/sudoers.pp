@@ -14,10 +14,10 @@ class boxen::sudoers {
   file { '/etc/sudoers.d':
     ensure => 'directory',
   } ->
-  file_line { 'include for sudoers.d':
-    path => '/etc/sudoers',
-    line => '#includedir /etc/sudoers.d',
-  } ->
+  #file_line { 'include for sudoers.d':
+  #  path => '/etc/sudoers',
+  #  line => '#includedir /etc/sudoers.d',
+  #} ->
   sudoers::allowed_command{ 'boxen':
     command          => join($boxen_commands, ','),
     user             => $::boxen_user,
