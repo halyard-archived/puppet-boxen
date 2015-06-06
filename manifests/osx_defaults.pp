@@ -25,12 +25,7 @@ define boxen::osx_defaults(
 
       if (($type == undef) and (($value == true) or ($value == false))) or ($type =~ /^bool/) {
         $type_ = 'bool'
-
-        $checkvalue = $value ? {
-          /(true|yes)/ => '1',
-          /(false|no)/ => '0',
-        }
-
+        $checkvalue = bool2num($value)
       } else {
         $type_      = $type
         $checkvalue = $value
