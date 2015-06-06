@@ -1,6 +1,6 @@
-Puppet::Bindings.newbindings('puppet-boxen::default') do
+Puppet::Bindings.newbindings('boxen::default') do
   bind {
-    name         'puppet-boxen'
+    name         'boxen'
     to           'function'
     in_multibind 'puppet::module_data'
   }

@@ -1,4 +1,4 @@
-Puppet::Functions.create_function(:'puppet-boxen::data') do
+Puppet::Functions.create_function(:'boxen::data') do
   def data()
     {
       'boxen::config::home'                   => '%{::boxen_home}'
