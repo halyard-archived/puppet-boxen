@@ -40,19 +40,19 @@ class boxen::config (
     $download_url_base,
   )
 
-  notify { "${home}, ${srcdir}, ${bindir}, ${cachedir}, ${configdir}, ${datadir}, ${envdir}, ${logdir}, ${socketdir}": } ->
-  file { [$home,
-          $srcdir,
-          $bindir,
-          $cachedir,
-          $configdir,
-          $datadir,
-          $envdir,
-          $logdir,
-          $socketdir]:
-    ensure => directory,
-    links  => follow
-  }
+  notify { "${home}, ${srcdir}, ${bindir}, ${cachedir}, ${configdir}, ${datadir}, ${envdir}, ${logdir}, ${socketdir}": }
+#  file { [$home,
+#          $srcdir,
+#          $bindir,
+#          $cachedir,
+#          $configdir,
+#          $datadir,
+#          $envdir,
+#          $logdir,
+#          $socketdir]:
+#    ensure => directory,
+#    links  => follow
+#  }
 
   file { "${home}/README.md":
     source => 'puppet:///modules/boxen/README.md'
