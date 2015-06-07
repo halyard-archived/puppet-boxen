@@ -23,7 +23,7 @@ class boxen::sudoers {
   }
 
   sudoers::allowed_command{ 'boxen_launchct':
-    command          => join($launchctl_commands = ','),
+    command          => join($launchctl_commands, ','),
     user             => $::boxen_user,
     require_password => false,
     comment          => 'Allow boxen user to control services',
