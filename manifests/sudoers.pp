@@ -22,6 +22,7 @@ class boxen::sudoers {
     command          => join($boxen_commands, ','),
     user             => $::boxen_user,
     require_password => false,
-    comment          => 'Allows boxen user to manipulate boxen and puppet'
+    comment          => 'Allows boxen user to manipulate boxen and puppet',
+    require_exist    => false
   }
 }
