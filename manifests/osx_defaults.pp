@@ -23,7 +23,8 @@ define boxen::osx_defaults(
         fail('Cannot ensure present without domain, key, and value attributes')
       }
 
-      if (($type == undef) and (($value == true) or ($value == false))) or ($type =~ /^bool/) {
+      if (($type == undef) and (($value == true) or ($value == false))) or
+        (($type == 'bool') or $type == 'boolean') {
         $type_ = 'bool'
         $checkvalue = bool2num($value)
       } else {
