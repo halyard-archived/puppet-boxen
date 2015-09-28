@@ -1,17 +1,22 @@
-# Boxen
+puppet-boxen
+===========
 
-[![Build Status](https://travis-ci.org/boxen/puppet-boxen.svg?branch=master)](https://travis-ci.org/boxen/puppet-boxen)
+[![MIT Licensed](http://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://tldrlegal.com/license/mit-license)
+[![Build Status](https://img.shields.io/circleci/project/halyard/puppet-boxen.svg)](https://circleci.com/gh/halyard/puppet-boxen)
 
-The Boxen puppet module for... Boxen.
-
-# Required Modules for Boxen
-
-Fundamental modules and types used by all of Boxen.
+Module to provide core types, facts, and manifests for Boxen
 
 ## Usage
 
+In your hiera config:
+
+```
+# Don't include ./ in $PATH
+boxen::environment::relative_bin_on_path: false
+```
+
 ```puppet
-# We owe you examples. Sorry.
+include boxen
 ```
 
 ## Facts
@@ -34,7 +39,3 @@ Default values:
  - `ENV['BOXEN_HOME']/config/boxen/defaults.json`
    - Default [`$BOXEN_HOME = /opt/boxen`](https://github.com/boxen/boxen/blob/535f66582e7f72ee070e48456081c9fbd22463ae/lib/boxen/config.rb#L125)
 
-## Development
-
-Write code. Run `script/cibuild` to test it. Check the `script`
-directory for other useful tools.
