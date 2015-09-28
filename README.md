@@ -6,6 +6,14 @@ puppet-boxen
 
 Module to provide core types, facts, and manifests for Boxen
 
+## Changes from upstream
+
+* Removed some meta from the project
+* Set up CircleCI tests
+* Switched to function bindings over puppet-module-data
+* Patch osx_defaults to be a bit cleaner
+* Switch to [puppet-sudoers](https://github.com/halyard/puppet-sudoers)
+
 ## Usage
 
 In your hiera config:
