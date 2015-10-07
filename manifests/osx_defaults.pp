@@ -34,11 +34,11 @@ define boxen::osx_defaults(
 
       $value_string = $type_ ? {
         undef   => shellquote(strip("${value} ")),
-        'dict'  => "-dict $value",
+        'dict'  => "-dict ${value}",
         default => shellquote("-${type_}", strip("${value} "))
       }
       $write_stub = shellquote($default_cmds, 'write', $domain, $key)
-      $write_cmd = "$write_stub $value_string"
+      $write_cmd = "${write_stub} ${value_string}"
 
       $read_cmd = shellquote($default_cmds, 'read', $domain, $key)
 
@@ -51,7 +51,9 @@ define boxen::osx_defaults(
       }
       $checktype_cmd = $type_ ? {
         undef   => '',
-        default => " && (${readtype_cmd} | awk '/^Type is / { exit \$3 != \"${checktype}\" } { exit 1 }')"
+        default => join([
+          " && (${readtype_cmd} | ",
+          "awk '/^Type is / { exit \$3 != \"${checktype}\" } { exit 1 }')"])
       }
 
       $refreshonly_ = $refreshonly ? {
@@ -61,7 +63,9 @@ define boxen::osx_defaults(
 
       exec { "osx_defaults write ${host} ${domain}:${key}=>${value}":
         command     => $write_cmd,
-        unless      => "${read_cmd} && (${read_cmd} | awk '{ exit \$0 != \"${checkvalue}\" }')${checktype_cmd}",
+        unless      => join([
+          "${read_cmd} && (${read_cmd} | ",
+          "awk '{ exit \$0 != \"${checkvalue}\" }')${checktype_cmd}"]),
         user        => $user,
         refreshonly => $refreshonly_
       }

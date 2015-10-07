@@ -1,0 +1,22 @@
+{
+  "name": "halyard-boxen",
+  "version": "3.11.1",
+  "author": "Les Aker",
+  "license": "MIT",
+  "summary": "Configure boxen via Boxen",
+  "source": "https://github.com/halyard/puppet-boxen",
+  "project_page": "https://github.com/halyard/puppet-boxen",
+  "issues_url": "https://github.com/halyard/puppet-boxen/issues",
+  "dependencies": [
+
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Darwin",
+      "operatingsystemmajrelease": [
+        "14",
+        "15"
+      ]
+    }
+  ]
+}

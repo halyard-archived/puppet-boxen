@@ -1,4 +1,5 @@
-# Private: Includes a user's personal configuration based on their GitHub username
+# Private: Includes a user's personal configuration based on their
+# GitHub username
 #
 # Usage:
 #
