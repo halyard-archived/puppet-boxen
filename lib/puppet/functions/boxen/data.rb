@@ -1,5 +1,5 @@
-module Puppet::Parser::Functions
-  newfunction(:'boxen::data', :type => :rvalue) do
+Puppet::Functions.create_function(:'boxen::data') do
+  def data
     home = lookupvar('::boxen_home')
     {
       'boxen::config::home'                   => home,
