@@ -7,3 +7,4 @@
 /spec/fixtures/modules
 !/spec/fixtures/modules/projects
 !/spec/fixtures/modules/people
+/pkg/
