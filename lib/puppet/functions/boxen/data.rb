@@ -1,6 +1,6 @@
 Puppet::Functions.create_function(:'boxen::data') do
   def data
-    home = lookupvar('::boxen_home')
+    home = closure_scope.lookupvar('::boxen_home')
     {
       'boxen::config::home'                   => home,
       'boxen::config::bindir'                 => "#{home}/bin",
@@ -10,13 +10,13 @@ Puppet::Functions.create_function(:'boxen::data') do
       'boxen::config::envdir'                 => "#{home}/env.d",
       'boxen::config::logdir'                 => "#{home}/log",
       'boxen::config::socketdir'              => "#{home}/data/project-sockets",
-      'boxen::config::homebrewdir'            => lookupvar('::homebrew_root'),
-      'boxen::config::repodir'                => lookupvar('::boxen_repodir'),
-      'boxen::config::reponame'               => lookupvar('::boxen_reponame'),
-      'boxen::config::srcdir'                 => lookupvar('::boxen_srcdir'),
-      'boxen::config::login'                  => lookupvar('::github_login'),
-      'boxen::config::repo_url_template'      => lookupvar('::boxen_repo_url_template'),
-      'boxen::config::download_url_base'      => lookupvar('::boxen_download_url_base'),
+      'boxen::config::homebrewdir'            => closure_scope.lookupvar('::homebrew_root'),
+      'boxen::config::repodir'                => closure_scope.lookupvar('::boxen_repodir'),
+      'boxen::config::reponame'               => closure_scope.lookupvar('::boxen_reponame'),
+      'boxen::config::srcdir'                 => closure_scope.lookupvar('::boxen_srcdir'),
+      'boxen::config::login'                  => closure_scope.lookupvar('::github_login'),
+      'boxen::config::repo_url_template'      => closure_scope.lookupvar('::boxen_repo_url_template'),
+      'boxen::config::download_url_base'      => closure_scope.lookupvar('::boxen_download_url_base'),
       'boxen::config::hiera_merge_hierarchy'  => false
     }
   end
