@@ -1,6 +1,6 @@
 {
   "name": "halyard-boxen",
-  "version": "3.11.4",
+  "version": "3.11.5",
   "author": "Les Aker",
   "license": "MIT",
   "summary": "Configure boxen via Boxen",
@@ -8,10 +8,10 @@
   "project_page": "https://github.com/halyard/puppet-boxen",
   "issues_url": "https://github.com/halyard/puppet-boxen/issues",
   "dependencies": [
-  {
-    "name": "puppetlabs-stdlib",
-    "version_requirement": ">= 4.0.0 < 5.0.0"
-  }
+    {
+      "name": "puppetlabs-stdlib",
+      "version_requirement": ">= 4.0.0 < 5.0.0"
+    }
   ],
   "operatingsystem_support": [
     {
