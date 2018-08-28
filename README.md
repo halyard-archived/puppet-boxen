@@ -3,7 +3,7 @@ puppet-boxen
 
 [![Puppet Forge](https://img.shields.io/puppetforge/v/halyard/boxen.svg)](https://forge.puppetlabs.com/halyard/boxen)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-green.svg)](https://tldrlegal.com/license/mit-license)
-[![Build Status](https://img.shields.io/circleci/project/halyard/puppet-boxen/master.svg)](https://circleci.com/gh/halyard/puppet-boxen)
+[![Build Status](https://img.shields.io/travis/com/halyard/puppet-boxen.svg)](https://travis-ci.com/halyard/puppet-boxen)
 
 Module to provide core types, facts, and manifests for Boxen
 
